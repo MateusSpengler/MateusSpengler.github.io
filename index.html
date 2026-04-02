@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contrato de Aquisição Premium · Páscoa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #c9a227;
+      --gold-light: #d4af37;
+      --brown-dark: #3d1a00;
+      --brown-mid: #7a5200;
+      --parchment: #fdf6e3;
+      --parchment-2: #f5e6c8;
+    }
+
+    body {
+      background: #1a0a00;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 48px 20px;
+      font-family: 'EB Garamond', serif;
+      position: relative;
+    }
+
+    /* ── Background ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse at 20% 50%, #3d1a00 0%, #1a0a00 65%);
+      z-index: 0;
+    }
+
+    /* ── Floating particles ── */
+    .particles { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .p {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: 0;
+      animation: floatUp linear infinite;
+    }
+    @keyframes floatUp {
+      0%   { transform: translateY(105vh) rotate(0deg);   opacity: 0; }
+      8%   { opacity: .55; }
+      90%  { opacity: .25; }
+      100% { transform: translateY(-80px) rotate(720deg); opacity: 0; }
+    }
+
+    /* ── Wrapper ── */
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      width: 100%;
+      animation: riseIn .9s ease both;
+    }
+    @keyframes riseIn {
+      from { opacity: 0; transform: translateY(36px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Contract card ── */
+    .contract {
+      background: linear-gradient(155deg, var(--parchment) 0%, var(--parchment-2) 45%, #fdf0d5 100%);
+      border: 1px solid var(--gold);
+      box-shadow:
+        0 0 0 6px var(--brown-dark),
+        0 0 0 10px var(--gold),
+        0 32px 90px rgba(0,0,0,.72),
+        inset 0 0 90px rgba(201,162,39,.07);
+      padding: 64px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* inner border */
+    .contract::before {
+      content: '';
+      position: absolute;
+      inset: 22px;
+      border: 1.5px solid rgba(201,162,39,.3);
+      pointer-events: none;
+    }
+
+    /* watermark */
+    .watermark {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%) rotate(-28deg);
+      font-family: 'Playfair Display', serif;
+      font-size: 88px;
+      font-weight: 900;
+      color: rgba(201,162,39,.055);
+      white-space: nowrap;
+      letter-spacing: 8px;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    /* ── Header ── */
+    .header { text-align: center; margin-bottom: 42px; }
+
+    .stamp {
+      display: inline-block;
+      border: 2.5px solid var(--brown-mid);
+      color: var(--brown-mid);
+      font-family: 'Playfair Display', serif;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      padding: 4px 18px;
+      margin-bottom: 18px;
+    }
+
+    .egg-icon {
+      display: block;
+      font-size: 60px;
+      margin-bottom: 14px;
+      filter: drop-shadow(0 4px 14px rgba(201,162,39,.45));
+      animation: bob 2.2s ease-in-out infinite;
+    }
+    @keyframes bob {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-9px); }
+    }
+
+    .title {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      font-weight: 900;
+      color: var(--brown-dark);
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-style: italic;
+      color: var(--brown-mid);
+      letter-spacing: 1px;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 30px 0;
+    }
+    .divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .divider-gem { font-size: 16px; color: var(--gold); }
+
+    /* ── Urgency banner ── */
+    .urgency {
+      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+      padding: 11px;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--brown-dark);
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      animation: glow 2.4s ease-in-out infinite;
+    }
+    @keyframes glow { 0%,100%{opacity:1} 50%{opacity:.78} }
+
+    /* ── Sections ── */
+    .section { margin-bottom: 30px; animation: slideIn .6s ease both; }
+    .section:nth-child(1){ animation-delay:.05s }
+    .section:nth-child(2){ animation-delay:.13s }
+    .section:nth-child(3){ animation-delay:.21s }
+    .section:nth-child(4){ animation-delay:.29s }
+    @keyframes slideIn {
+      from { opacity:0; transform:translateX(-12px); }
+      to   { opacity:1; transform:translateX(0); }
+    }
+
+    .clause-tag {
+      display: inline-block;
+      background: var(--brown-dark);
+      color: var(--gold-light);
+      font-family: 'Playfair Display', serif;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 3px 12px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--brown-dark);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .section p {
+      font-size: 16.5px;
+      color: var(--brown-dark);
+      line-height: 1.9;
+      text-align: justify;
+    }
+
+    em.hl {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--brown-mid);
+    }
+
+    /* ── Benefits grid ── */
+    .benefits {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .benefit {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: rgba(201,162,39,.09);
+      border: 1px solid rgba(201,162,39,.3);
+      padding: 13px 15px;
+      font-size: 15px;
+      color: var(--brown-dark);
+      line-height: 1.45;
+    }
+    .b-icon { font-size: 19px; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── Price box ── */
+    .price-box {
+      background: var(--brown-dark);
+      padding: 26px 32px;
+      text-align: center;
+      margin: 28px 0;
+    }
+    .price-label {
+      font-family: 'Playfair Display', serif;
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .price-old {
+      font-size: 15px;
+      color: rgba(201,162,39,.45);
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+    .price-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 50px;
+      font-weight: 900;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+    .price-cond {
+      font-size: 13px;
+      color: rgba(201,162,39,.65);
+      font-style: italic;
+      margin-top: 8px;
+    }
+
+    /* ── Signature ── */
+    .sig-area {
+      margin-top: 44px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(201,162,39,.4);
+    }
+    .sig-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--brown-dark);
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .sig-desc {
+      font-size: 15px;
+      color: var(--brown-mid);
+      font-style: italic;
+      margin-bottom: 24px;
+      line-height: 1.65;
+    }
+
+    .sig-fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .sig-field label {
+      display: block;
+      font-size: 10.5px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--brown-mid);
+      margin-bottom: 8px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .sig-text-input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid var(--gold);
+      padding: 7px 2px;
+      font-family: 'Playfair Display', serif;
+      font-size: 21px;
+      font-style: italic;
+      color: var(--brown-dark);
+      outline: none;
+      transition: border-color .25s;
+    }
+    .sig-text-input:focus { border-color: var(--brown-dark); }
+    .sig-text-input::placeholder { color: rgba(122,82,0,.22); font-size: 15px; }
+
+    .canvas-wrap { position: relative; }
+    .sig-canvas {
+      border-bottom: 2px solid var(--gold);
+      display: block;
+      width: 100%;
+      height: 82px;
+      cursor: crosshair;
+      touch-action: none;
+    }
+    .canvas-hint {
+      font-size: 11px;
+      color: rgba(122,82,0,.45);
+      font-style: italic;
+      margin-top: 5px;
+    }
+    .clear-btn {
+      position: absolute;
+      top: 0; right: 0;
+      background: none;
+      border: none;
+      font-size: 11px;
+      color: rgba(122,82,0,.45);
+      cursor: pointer;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color .2s;
+      font-family: 'EB Garamond', serif;
+    }
+    .clear-btn:hover { color: var(--brown-mid); }
+
+    /* ── Confirm button ── */
+    .confirm-btn {
+      display: block;
+      width: 100%;
+      margin-top: 34px;
+      padding: 19px;
+      background: linear-gradient(135deg, var(--brown-dark), var(--brown-mid));
+      border: 2px solid var(--gold);
+      color: var(--gold-light);
+      font-family: 'Playfair Display', serif;
+      font-size: 16.5px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow .3s, transform .2s;
+    }
+    .confirm-btn::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(212,175,55,.18), transparent);
+      transition: left .5s;
+    }
+    .confirm-btn:hover::after { left: 100%; }
+    .confirm-btn:hover {
+      box-shadow: 0 0 36px rgba(212,175,55,.28);
+      transform: translateY(-2px);
+    }
+
+    /* ── Footer note ── */
+    .footer-note {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 12px;
+      color: rgba(122,82,0,.55);
+      font-style: italic;
+      letter-spacing: .5px;
+    }
+
+    /* ── Confirmed overlay ── */
+    #overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(26,10,0,.92);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn .4s ease;
+    }
+    #overlay.show { display: flex; }
+    @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+    .confirmed-box {
+      text-align: center;
+      padding: 60px 54px;
+      border: 2px solid var(--gold);
+      background: linear-gradient(155deg, var(--parchment), var(--parchment-2));
+      max-width: 480px;
+      width: 90%;
+      box-shadow: 0 0 0 8px var(--brown-dark), 0 0 70px rgba(212,175,55,.35);
+    }
+    .conf-egg {
+      font-size: 82px;
+      display: block;
+      margin-bottom: 22px;
+      animation: spinIn .6s ease;
+    }
+    @keyframes spinIn {
+      from { transform:rotate(-20deg) scale(.4); opacity:0; }
+      to   { transform:rotate(0) scale(1); opacity:1; }
+    }
+    .conf-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      font-weight: 900;
+      color: var(--brown-dark);
+      margin-bottom: 14px;
+    }
+    .conf-sub {
+      font-size: 17px;
+      color: var(--brown-mid);
+      font-style: italic;
+      line-height: 1.7;
+      margin-bottom: 26px;
+    }
+    .conf-sub strong { font-style: normal; color: var(--brown-dark); }
+    .conf-close {
+      background: var(--brown-dark);
+      color: var(--gold-light);
+      border: 2px solid var(--gold);
+      padding: 12px 38px;
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background .25s;
+    }
+    .conf-close:hover { background: var(--brown-mid); }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .contract { padding: 40px 28px; }
+      .title { font-size: 28px; }
+      .benefits { grid-template-columns: 1fr; }
+      .sig-fields { grid-template-columns: 1fr; }
+      .price-val { font-size: 38px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Particles -->
+<div class="particles" id="particles"></div>
+
+<!-- Main wrapper -->
+<div class="wrapper">
+  <div class="contract">
+    <div class="watermark">🥚 EGG CO.</div>
+
+    <!-- Header -->
+    <div class="header">
+      <div class="stamp">Documento Oficial · Páscoa 2025</div>
+      <span class="egg-icon">🥚</span>
+      <h1 class="title">Proposta Irrecusável de<br>Aquisição Premium</h1>
+      <p class="subtitle">Edição Limitada · Alta Performance · ROI Garantido</p>
+    </div>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <span class="divider-gem">✦</span>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- Urgency -->
+    <div class="urgency">⚠ Oferta válida por tempo extremamente limitado — Páscoa não espera ⚠</div>
+
+    <!-- Clause I -->
+    <div class="section">
+      <span class="clause-tag">CLÁUSULA I</span>
+      <h2 class="section-title">Identificação do Produto</h2>
+      <p>
+        O presente instrumento formaliza a aquisição de um
+        <em class="hl">Ovo de Páscoa de Alta Performance™</em>, doravante denominado "O Produto",
+        um ativo estratégico de altíssimo valor agregado, cuidadosamente selecionado para atender
+        às necessidades mais exigentes do mercado de confeitaria premium. Trata-se de uma solução
+        completa em formato oval, desenvolvida para entregar resultados
+        <em class="hl">imediatos e mensuráveis</em> no seu bem-estar geral.
+      </p>
+    </div>
+
+    <!-- Clause II -->
+    <div class="section">
+      <span class="clause-tag">CLÁUSULA II</span>
+      <h2 class="section-title">Proposta de Valor</h2>
+      <p>
+        O mercado jamais viu nada igual. Este produto reúne em um único ativo
+        <em class="hl">décadas de expertise chocolateira</em>, tecnologia de ponta em moldagem oval
+        e um blend exclusivo de cacau que a concorrência simplesmente não consegue reproduzir.
+        Os diferenciais competitivos falam por si:
+      </p>
+      <div class="benefits">
+        <div class="benefit"><span class="b-icon">🍫</span><span>Chocolate de alta qualidade com textura que supera as expectativas do cliente</span></div>
+        <div class="benefit"><span class="b-icon">📈</span><span>ROI imediato: satisfação entregue nos primeiros 3 segundos de consumo</span></div>
+        <div class="benefit"><span class="b-icon">🎯</span><span>Formato 100% oval — zero arestas, zero fricção, máxima fluidez</span></div>
+        <div class="benefit"><span class="b-icon">⚡</span><span>Energia de açúcar de ação ultrarrápida para fechar qualquer negócio</span></div>
+        <div class="benefit"><span class="b-icon">🏆</span><span>Edição sazonal limitada — escassez que valoriza o ativo</span></div>
+        <div class="benefit"><span class="b-icon">💼</span><span>Embalagem premium — apresentação impecável em qualquer reunião</span></div>
+      </div>
+    </div>
+
+    <!-- Clause III -->
+    <div class="section">
+      <span class="clause-tag">CLÁUSULA III</span>
+      <h2 class="section-title">Investimento &amp; Condições</h2>
+      <div class="price-box">
+        <p class="price-label" style="color: white">Investimento Total do Contrato</p>
+        <p class="price-old" style="color: white">R$ 149,90</p>
+        <p class="price-val" style="color: white">R$ 0,00</p>
+        <p class="price-cond" style="color: white">*Promoção exclusiva de Páscoa — oportunidade única, não se repete</p>
+      </div>
+      <p>
+        Considerando o <em class="hl">valor intrínseco excepcionalmente alto</em> do produto e a
+        raridade desta janela comercial, o presente contrato estabelece condições absolutamente
+        únicas: aquisição com custo zero, entrega imediata na mão do adquirente e
+        suporte pós-venda garantido — porque um produto desta magnitude merece um fechamento à altura.
+      </p>
+    </div>
+
+    <!-- Clause IV -->
+    <div class="section">
+      <span class="clause-tag">CLÁUSULA IV</span>
+      <h2 class="section-title">Garantias e SLA</h2>
+      <p>
+        O produto é entregue com <em class="hl">garantia total de sabor</em>, política de
+        não-devolução após o primeiro mordisco e suporte técnico via
+        <em class="hl">sorriso no rosto</em>. Caso o produto não atinja suas expectativas, o
+        vendedor responsável compromete-se a entrar em profunda crise existencial. O prazo de
+        validade emocional deste gesto é <em class="hl">eterno</em>.
+      </p>
+    </div>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <span class="divider-gem">✦</span>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- Signature -->
+    <div class="sig-area">
+      <p class="sig-heading">Aceite &amp; Assinatura</p>
+      <p class="sig-desc">
+        Ao assinar abaixo, o adquirente declara ter lido, compreendido e aceito com
+        extremo prazer todas as cláusulas desta proposta irrecusável.
+      </p>
+
+      <div class="sig-fields">
+        <div class="sig-field">
+          <label>Nome Completo do Adquirente</label>
+          <input id="nameInput" class="sig-text-input" type="text" placeholder="Seu nome aqui..." />
+        </div>
+
+        <div class="sig-field">
+          <label>Assinatura</label>
+          <div class="canvas-wrap">
+            <button class="clear-btn" onclick="clearCanvas()">Limpar</button>
+            <canvas id="sigCanvas" class="sig-canvas" width="700" height="82"></canvas>
+            <p class="canvas-hint">Assine com o mouse ou dedo</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="confirm-btn" onclick="confirm()">✦ Confirmar Aquisição do Produto ✦</button>
+    </div>
+
+    <p class="footer-note">
+      Este documento não possui valor jurídico, mas possui valor afetivo imensurável.
+      © EGG Premium Co. · Páscoa 2025 · Todos os chocolates reservados.
+    </p>
+  </div>
+</div>
+
+<!-- Overlay -->
+<div id="overlay">
+  <div class="confirmed-box">
+    <span class="conf-egg">🎉</span>
+    <h2 class="conf-title">Negócio Fechado!</h2>
+    <p class="conf-sub" id="confMsg"></p>
+    <button class="conf-close" onclick="closeOverlay()">Fechar Contrato</button>
+  </div>
+</div>
+
+<script>
+  /* ── Particles ── */
+  const container = document.getElementById('particles');
+  for (let i = 0; i < 22; i++) {
+    const p = document.createElement('div');
+    p.className = 'p';
+    const s = 2 + Math.random() * 4;
+    p.style.cssText = `
+      left:${Math.random()*100}%;
+      width:${s}px; height:${s}px;
+      animation-delay:${Math.random()*9}s;
+      animation-duration:${6+Math.random()*9}s;
+    `;
+    container.appendChild(p);
+  }
+
+  /* ── Canvas drawing ── */
+  const canvas = document.getElementById('sigCanvas');
+  const ctx = canvas.getContext('2d');
+  let drawing = false;
+
+  function getPos(e) {
+    const r = canvas.getBoundingClientRect();
+    const sx = canvas.width / r.width;
+    const sy = canvas.height / r.height;
+    const cx = e.touches ? e.touches[0].clientX : e.clientX;
+    const cy = e.touches ? e.touches[0].clientY : e.clientY;
+    return { x: (cx - r.left) * sx, y: (cy - r.top) * sy };
+  }
+
+  canvas.addEventListener('mousedown',  e => { drawing=true; const p=getPos(e); ctx.beginPath(); ctx.moveTo(p.x,p.y); });
+  canvas.addEventListener('mousemove',  e => { if(!drawing) return; draw(e); });
+  canvas.addEventListener('mouseup',    () => drawing=false);
+  canvas.addEventListener('mouseleave', () => drawing=false);
+  canvas.addEventListener('touchstart', e => { e.preventDefault(); drawing=true; const p=getPos(e); ctx.beginPath(); ctx.moveTo(p.x,p.y); }, {passive:false});
+  canvas.addEventListener('touchmove',  e => { e.preventDefault(); if(!drawing) return; draw(e); }, {passive:false});
+  canvas.addEventListener('touchend',   () => drawing=false);
+
+  function draw(e) {
+    const p = getPos(e);
+    ctx.strokeStyle = '#3d1a00';
+    ctx.lineWidth = 2.5;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.lineTo(p.x, p.y);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(p.x, p.y);
+  }
+
+  function clearCanvas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+  /* ── Confirm ── */
+  function confirm() {
+    const name = document.getElementById('nameInput').value.trim();
+    if (!name) {
+      alert('Por favor, preencha seu nome antes de assinar o contrato! 😄');
+      return;
+    }
+    document.getElementById('confMsg').innerHTML =
+      `Parabéns, <strong>${name}</strong>!<br>Você acabou de adquirir o melhor ovo de Páscoa do mercado.<br><br>Produto entregue. Satisfação garantida. Feliz Páscoa! 🏆🍫`;
+    document.getElementById('overlay').classList.add('show');
+  }
+
+  function closeOverlay() {
+    document.getElementById('overlay').classList.remove('show');
+  }
+
+  document.getElementById('overlay').addEventListener('click', function(e) {
+    if (e.target === this) closeOverlay();
+  });
+</script>
+</body>
+</html>
