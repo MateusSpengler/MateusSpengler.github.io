@@ -683,23 +683,19 @@
       return;
     }
     document.getElementById('confMsg').innerHTML =
-      `Parabéns, <strong>${name}</strong>!<br>Você acabou de adquirir o melhor ovo de Páscoa do mercado.<br><br>Produto será entregue se for adivinhar onde ele está!
-<br>
+      `Parabéns, <strong>${name}</strong>!<br>Você acabou de adquirir o melhor ovo de Páscoa do mercado.<br><br>Produto será entregue se adivinhar onde ele está!
 "Carrego caminhos sem nunca partir,<br>
 Sustento jornadas sem sair daqui.<br>
-E escondo segredos onde a pressa não alcança.<br>
 Já fui cenário sutil em contos de magia,<br>
 Onde um jovem bruxo viveu sem muita regalia.<br>
 Se quer encontrar o que aqui se esconde então:<br>
 Procure onde o primeiro passo encontra o chão."<br>
-
 `;
     document.getElementById('overlay').classList.add('show');
   }
 
   function closeOverlay() {
     window.location.href = "https://syync.com.br";
-    document.getElementById('overlay').classList.remove('show');
   }
 
   document.getElementById('overlay').addEventListener('click', function(e) {
