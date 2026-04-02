@@ -694,7 +694,7 @@ Procure onde o primeiro passo encontra o chão."<br>
   }
 
   function closeOverlay() {
-    window.location.href = "https://syync.com.br";
+    document.getElementById('overlay').classList.remove('show');
   }
 
   document.getElementById('overlay').addEventListener('click', function(e) {
